@@ -21,10 +21,9 @@
              </div>
           </div>
           <div class="col-6">
-            <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate name="form">
+               <form (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate name="form">
               <div class="form-group">
-                <label>First name&nbsp;  
-                       <abbr class="required" title="required">*</abbr>
+                <label>First name (required)
                 </label>
                      <input type="text" class="form-control" name="name" required [(ngModel)]="formData.name" #name="ngModel" [ngClass]="{'is-invalid': f.submitted && name.invalid}">
                      <div class="invalid-feedback">
@@ -55,6 +54,9 @@
               </div>
               <button type="submit" class="btn btn-dark">SEND</button>
             </form>
+            <div class="alert alert-primary alert_msg" role="alert" *ngIf="alert">
+                             Thank you for your message. It has been sent.
+             </div>
           </div>
        </div> 
    </div>

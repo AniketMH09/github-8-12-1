@@ -6,8 +6,11 @@
   text-align: center;
   cursor: pointer;
   position: relative;
-  
   pointer-events: auto;
+}
+
+.card-img-top {
+  height: 270px;
 }
 
 .card-title {

@@ -32,8 +32,9 @@ export class CheckoutComponent implements OnInit {
    }
   }
 
-  onSubmit() {
+  onSubmit(f) {
     console.log(this.data, this.addInfo);
+    f.submitted = false;
     this.data = {
      companyName: '',
      contryName: 'India',
@@ -45,8 +46,9 @@ export class CheckoutComponent implements OnInit {
    localStorage.removeItem('total');
   }
 
-  onLoginSubmit(){
+  onLoginSubmit(lf){
     console.log(this.login);
+    lf.submitted = false;
     this.login.login_email = '';
     this.login.login_password = '';
   }

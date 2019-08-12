@@ -10,26 +10,27 @@ export class ContactComponent implements OnInit {
 
    lat: number = 12.9716;
   lng: number = 77.5946;
-  formData = {};
+   formData = {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
+    alert = false;
   constructor() { }
 
   ngOnInit() {
-    this.formData = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    };
+    
   }
 
-  onSubmit() {
-   
-    this.formData = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    };
+  onSubmit(f) {
+    //console.log(f);
+    f.submitted = false;
+    this.formData.name = '';
+    this.formData.email = '';
+    this.formData.message = '';
+    this.formData.subject = '';
+    this.alert = true;
   }
 
 }

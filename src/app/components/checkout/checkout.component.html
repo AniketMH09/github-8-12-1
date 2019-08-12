@@ -13,7 +13,7 @@
     </div>
     <div class="login_note login_form" *ngIf='show'>
        <div class="login_text">If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.</div>
-       <form class="form_login" name="login_form" #lf="ngForm" novalidate (ngSubmit)='lf.form.valid && onLoginSubmit()'>
+       <form class="form_login" name="login_form" #lf="ngForm" novalidate (ngSubmit)='lf.form.valid && onLoginSubmit(lf)'>
             <div class="row">
                <div class="col">
                  <div class="form-group">
@@ -46,7 +46,7 @@
 <!--------------------------------------------------------------------------------------------------------------------------->
    <div class="details">
        <div class="address">
-        <form name="form" #f="ngForm" novalidate (ngSubmit)='f.form.valid && onSubmit()'>
+        <form name="form" #f="ngForm" novalidate (ngSubmit)='f.form.valid && onSubmit(f)'>
          <div class="row">
       <!--------------------------------------------------------------------------------------------------------------------------->     
             <div class="col-6">
