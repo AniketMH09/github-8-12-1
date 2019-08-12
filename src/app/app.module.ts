@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatDatepickerModule, MatFormFieldModule,MatInputModule,MatNativeDateModule} from '@angular/material';
+
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -51,6 +53,10 @@ const appRoutes: Routes = [
     CheckoutComponent
   ],
   imports: [
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -59,7 +65,9 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyDktOU89k0KVMdPe51SaJvN57ddhEbcaBU'
     })
   ],
-  providers: [MainService, AuthGuard ],
+  exports: [MatDatepickerModule,MatFormFieldModule,
+        MatInputModule,MatNativeDateModule],
+  providers: [MainService, AuthGuard, MatDatepickerModule ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
