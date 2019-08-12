@@ -32,7 +32,17 @@
     font-size: 100px;
     color: rgb(197, 157, 95);
     margin-top: -120px;
+    opacity: 1;
+    animation-name: moveit1;
+    animation-duration: 1s;
+    position: relative;
+  
   }
+
+  @keyframes moveit1 {
+        from {left: 50%;}
+        to {left: 0%;}
+    }
 
   .brand_name_contain_name {
       letter-spacing: 9.4px;
@@ -40,7 +50,16 @@
       font-weight: 900;
       font-size: 47px;
       margin-top: -60px;
+      opacity: 1;
+      animation-name: moveit;
+      animation-duration: 1s;
+      position: relative;
   }
+
+  @keyframes moveit {
+        from {right: 50%;}
+        to {right: 0%;}
+    }
 
   .form_contact {
     margin-top: 80px;

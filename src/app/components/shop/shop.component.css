@@ -30,8 +30,17 @@
     font-weight: normal;
     font-size: 100px;
     color: rgb(197, 157, 95);
+     opacity: 5;
+      animation-name: moveit1;
+      animation-duration: 1s;
+      position: relative;
     
   }
+
+  @keyframes moveit1 {
+        from {bottom: 50%;}
+        to {bottom: 0%;}
+    }
 
   .brand_name_contain_name {
       letter-spacing: 9.4px;
@@ -39,19 +48,46 @@
       font-weight: 900;
       font-size: 47px;
       margin-top: -60px;
+      opacity: 5;
+      animation-name: moveit;
+      animation-duration: 1s;
+      position: relative;
   }
+
+  @keyframes moveit {
+        from {right: 50%;}
+        to {right: 0%;}
+    }
 
   .line {
      border-bottom: 1px solid whitesmoke;
      width: 330px;
+     opacity: 5;
+      animation-name: moveit2;
+      animation-duration: 1s;
+      position: relative;
    }
+
+   @keyframes moveit2 {
+        from {left: 50%;}
+        to {left: 0%;}
+    }
 
    .brand_name_contain_name2 {
       color: white;
       font-weight: 400;
       font-size: 15px;
       margin-top: 5px;
+      opacity: 5;
+      animation-name: moveit3;
+      animation-duration: 1s;
+      position: relative;
   }
+
+  @keyframes moveit3 {
+        from {top: 50%;}
+        to {top: 0%;}
+    }
   .main_top {
     width: 1177px;
     margin: 80px;
