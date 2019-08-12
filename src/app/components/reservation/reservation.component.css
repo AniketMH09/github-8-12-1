@@ -71,13 +71,33 @@
 }
 
 .reservation_data {
-  height: 360px;
+  height: 160px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+}
+.date_picker {
+  position: relative;
+  bottom: 10px;
+  
+}
+
+.mobile_number {
+  border-radius: 4px;
+}
+
+.time_picker {
+  width: 70%; 
+  position: relative;
+  left: 40px;
+}
+.time_picker2 {
+  width: 70%; 
+  position: relative;
+  left: 10px;
 }
 
 .res_titel {
@@ -112,7 +132,29 @@
     }
 
 .date_time {
+  margin-left: 120px;
+  margin-bottom: 50px;
+}
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.table_book {
+  padding: 12px 30px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    background-color: #262526;
+    transition: all .15s;
+    border-radius: 3px;
+    margin: 0 40%;
+    position: relative;
+    right: 60px;
 }
 /* **************reservation info */
 .res_info {
