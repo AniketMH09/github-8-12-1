@@ -11,6 +11,7 @@ import {FormControl} from '@angular/forms';
 export class ReservationComponent implements OnInit {
 
 date = new FormControl(new Date());
+startDate = new Date();
 
    
   
