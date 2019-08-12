@@ -1,0 +1,246 @@
+<div class="main_page_class">
+<!--------------------------------------------------------------------------------------------------------------------------->  
+   <div class="home">
+        <app-navbar [value] = 4></app-navbar>
+        <div class="brand_name">
+        <div class="brand_name_contain_name">CHECKOUT</div>
+      </div>
+   </div>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<div class="login_detail">
+    <div class="login_note">
+       <div class="login_text">Returning customer?</div><a (click)="show = !show" class="login_link">here to login</a>
+    </div>
+    <div class="login_note login_form" *ngIf='show'>
+       <div class="login_text">If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.</div>
+       <form class="form_login" name="login_form" #lf="ngForm" novalidate (ngSubmit)='lf.form.valid && onLoginSubmit()'>
+            <div class="row">
+               <div class="col">
+                 <div class="form-group">
+                   <label>Email&nbsp;
+                      <abbr class="required" title="required">*</abbr> 
+                     </label>
+                   <input type="text" class="form-control" name="login_email" required [(ngModel)]="login.login_email"      #login_email="ngModel" [ngClass]="{'is-invalid': lf.submitted && login_email.invalid}">
+                     <div class="invalid-feedback">
+                               Please enter email.
+                     </div>
+                 </div>  
+               </div>
+               <div class="col">
+                 <div class="form-group">
+                   <label>Password&nbsp;
+                      <abbr class="required" title="required">*</abbr> 
+                     </label>
+                   <input type="password" class="form-control" name="login_password" required [(ngModel)]="login.login_password" #login_password="ngModel" [ngClass]="{'is-invalid': lf.submitted && login_password.invalid}">
+                     <div class="invalid-feedback">
+                               Please enter password.
+                     </div>
+                 </div>  
+               </div>
+             </div>
+             <button type="submit" class="btn btn-light login_btn">Login</button>
+        </form>
+    </div>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------------->
+   <div class="details">
+       <div class="address">
+        <form name="form" #f="ngForm" novalidate (ngSubmit)='f.form.valid && onSubmit()'>
+         <div class="row">
+      <!--------------------------------------------------------------------------------------------------------------------------->     
+            <div class="col-6">
+              <div class="title">BILLING DETAILS</div>
+              <div class="row">
+                <!---------------------------------------------------------------------------------------------------------------> 
+                  <div class="col-6">
+                     <div class="form-group">
+                     <label for="exampleInputEmail1">First name&nbsp;  
+                       <abbr class="required" title="required">*</abbr>
+                     </label>
+                     <input type="text" class="form-control" name="firstName" required [(ngModel)]="data.firstName" #firstName="ngModel" [ngClass]="{'is-invalid': f.submitted && firstName.invalid}">
+                     <div class="invalid-feedback">
+                               Please enter firstname.
+                     </div>
+                     </div>    
+                  </div>
+                  
+                  <div class="col-6">
+                     <div class="form-group">
+                     <label for="exampleInputEmail1">Last name&nbsp;
+                      <abbr class="required" title="required">*</abbr> 
+                     </label>
+                     <input type="text" class="form-control" name="lastName" required [(ngModel)]="data.lastName" #lastName="ngModel" [ngClass]="{'is-invalid': f.submitted && lastName.invalid}">
+                     <div class="invalid-feedback">
+                               Please enter lastname.
+                     </div>
+                     </div>    
+                  </div>
+                  <!--------------------------------------------------------------------------------------------------------------->     
+              </div>
+              <div class="form-group">
+               <label for="exampleInputEmail1">Company name(optional)</label>
+               <input type="text" class="form-control" name="companyName" [(ngModel)]="data.companyName">
+             </div>
+
+             <div class="form-group">
+               <label for="exampleFormControlSelect1">Country&nbsp;
+                 <abbr class="required" title="required">*</abbr>
+               </label>
+                  <select class="form-control" id="exampleFormControlSelect1" name="contryName" [(ngModel)]="data.contryName">
+                     <option value="India">India</option>
+                  </select>
+                 
+            </div>
+
+                    <div class="form-group">
+                     <label for="exampleInputEmail1">Street address&nbsp;
+                      <abbr class="required" title="required">*</abbr> 
+                     </label>
+                     <input type="text" class="form-control" placeholder="HOUSE NUMBER AND STRRET NAME" name="address" required 
+                     [(ngModel)]="data.address" #address="ngModel" [ngClass]="{'is-invalid': f.submitted && lastName.invalid}">
+                     <div class="invalid-feedback">
+                               Please enter address.
+                     </div>
+                    </div> 
+
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="APARTMENT.SUITE.UNIT ETC.(OPTIONAL)" name="addressOpt"
+                       [(ngModel)]="data.addressOpt">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="exampleFormControlSelect1">Town/city&nbsp;
+                      <abbr class="required" title="required">*</abbr>
+                      </label>
+                  <select class="form-control" id="exampleFormControlSelect1" name="cityName"
+                       [(ngModel)]="data.cityName">
+                     <option value="Kolhapur">Kolhapur</option>
+                  </select>    
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleFormControlSelect1">State&nbsp;
+                      <abbr class="required" title="required">*</abbr>
+                      </label>
+                  <select class="form-control" id="exampleFormControlSelect1" name="stateName"
+                       [(ngModel)]="data.stateName">
+                     <option value="Maharastra">Maharastra</option>
+                  </select>
+              </div>
+               <div class="form-group">
+                     <label for="exampleInputEmail1">Postcode/Zip&nbsp;
+                      <abbr class="required" title="required">*</abbr> 
+                     </label>
+                     <input type="text" class="form-control"  name="postCode" required 
+                     [(ngModel)]="data.postCode" #postCode="ngModel" [ngClass]="{'is-invalid': f.submitted && lastName.invalid}">
+                     <div class="invalid-feedback">
+                               Please enter postcode.
+                     </div>
+                    </div>
+                    <div class="form-group">
+                     <label for="exampleInputEmail1">Phone
+                      <abbr class="required" title="required">*</abbr> 
+                     </label>
+                     <input type="text" class="form-control" name="phone" required 
+                     [(ngModel)]="data.phone" #phone="ngModel" [ngClass]="{'is-invalid': f.submitted && lastName.invalid}">
+                     <div class="invalid-feedback">
+                               Please enter phone number.
+                     </div>
+                    </div>
+                    <div class="form-group">
+                     <label for="exampleInputEmail1">Email address&nbsp;
+                      <abbr class="required" title="required">*</abbr> 
+                     </label>
+                     <input type="email" class="form-control" name="email" required
+                     [(ngModel)]="data.email" #email="ngModel" [ngClass]="{'is-invalid': f.submitted && lastName.invalid}">
+                     <div class="invalid-feedback">
+                               Please enter a valid emial id.
+                     </div>
+                    </div> 
+             
+            
+             </div>
+     <!--------------------------------------------------------------------------------------------------------------------------->       
+             <div class="col-6">
+                  <div class="title">ADDITIONAL INFORMATION</div>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Order notes (optional)</label>
+                     <input type="text" class="form-control notes" placeholder="NOTES ABOUT YOUR ORDERS, E.G. SPEACIAL NOTES FOR DELIVERY" name="addional_info" [(ngModel)]="addInfo">
+                    </div> 
+             </div>
+      <!--------------------------------------------------------------------------------------------------------------------------->     
+           </div>
+           <div class="row">
+               <div class="col-12">
+    <!--------------------------------------------------------------------------------------------------------------------------->
+<div class="order">
+    <div class="order_title">YOUR ORDER</div>
+    <div class="order_table">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let item of orders'>
+      <td>{{item.title}}&nbsp; X &nbsp;{{item.quantity}}</td>
+      <td>{{item.price * item.quantity}}</td>
+    </tr>
+    <tr>
+      <th>Subtotal</th>
+      <th>{{total}}</th>
+    </tr>
+    <tr>
+      <th>Total</th>
+      <th>{{total}}</th>
+    </tr>
+
+  </tbody>
+</table>
+    </div>
+</div>
+               </div>
+           </div>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<div class="row">
+  <div class="col-12">
+    <div class="payment">
+        <div class="note">
+           <p>Sorry, it seems that there are no available payment methods for you. So Cash On Delivery is the payment option for your order.</p>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-dark place_order">PLACE ORDER</button>
+    </div>
+  </div>
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------->
+         </form>
+       </div>
+   </div>
+<!--------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------->
+<app-footer></app-footer>
+<!--------------------------------------------------------------------------------------------------------------------------->
+</div>
+<!--
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
